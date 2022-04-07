@@ -17,11 +17,5 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",
     "vite": "^2.9.0"
-  },
-
-"homepage": "https://cinth010.github.io/sticker",
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
   }
 }
