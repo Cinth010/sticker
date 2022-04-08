@@ -2,7 +2,7 @@
   "name": "sticker",
   "private": true,
   "version": "0.0.0",
-  "homepage": "sticker/index.html",
+  "homepage": "index.html",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
