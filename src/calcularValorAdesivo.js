@@ -1,3 +1,5 @@
+import valoresMedidasMaterial from "./valoresMedidasMaterial";
+
 /**
  * 
  * @param {number} altura 
@@ -9,32 +11,37 @@ function otimizarAvanco(altura, largura) {
 }
 
 /**
- * 
  * @param {string} alturaString 
  * @param {string} larguraString 
  * @param {string} quantidadeString 
  * @param {boolean} adicionalDeArte
+ * @param {'fosco' | 'blocado' | 'promocional' | 'transparente'} nomeMaterial
  */
-function calcularValorAdesivo(alturaString, larguraString, quantidadeString, adicionalDeArte) {
+function calcularValorAdesivo(alturaString, larguraString, quantidadeString, adicionalDeArte, nomeMaterial) {
     const [altura, largura] = otimizarAvanco(Number(alturaString), Number(larguraString));
+    const {
+        valorMaterialAmador,
+        valorMaterialProfissional,
+        larguraMaterial,
+    } = valoresMedidasMaterial(nomeMaterial);
+
     const quantidadeDeAdesivos = Number(quantidadeString);
 
-    const LARGURA_MATERIAL = 120;
-    const VALOR_PROFISSIONAL = 66;
-    const VALOR_AMADOR = 120;
-
-    const quantidadeDeAdesivosPorLinha = Math.floor(LARGURA_MATERIAL / largura);
+   const AVANCO_IMPRESSORA = 4;
+   const VALOR_ARTE_ADICIONAL = 5;
+    
+    const quantidadeDeAdesivosPorLinha = Math.floor(larguraMaterial / largura);
 
     const quantidadeDeLinhas = Math.ceil(quantidadeDeAdesivos / quantidadeDeAdesivosPorLinha);
-    const avancoTotalImpressao = (quantidadeDeLinhas * altura) + 2;
+    const avancoTotalImpressao = (quantidadeDeLinhas * altura) + AVANCO_IMPRESSORA;
 
-    const areaTotalAdesivos = (LARGURA_MATERIAL / 100)*(avancoTotalImpressao / 100);
+    const areaTotalAdesivos = (larguraMaterial / 100)*(avancoTotalImpressao / 100);
 
-    const totalValorProfissional = areaTotalAdesivos * VALOR_PROFISSIONAL + (adicionalDeArte ? 5 : 0);
-    const totalValorAmador = (areaTotalAdesivos * VALOR_AMADOR) + (adicionalDeArte ? 5 : 0);
+    const totalValorProfissional = areaTotalAdesivos * valorMaterialProfissional + (adicionalDeArte ? 5 : 0);
+    const totalValorAmador = (areaTotalAdesivos * valorMaterialAmador) + (adicionalDeArte ? VALOR_ARTE_ADICIONAL : 0);
 
     return {
-        larguraMaterial: LARGURA_MATERIAL,
+        larguraMaterial,
         avancoTotalImpressao,
         totalValorAmador,
         totalValorProfissional,
