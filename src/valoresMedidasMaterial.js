@@ -1,4 +1,4 @@
-sh /**
+/**
  * @param {'fosco' | 'blocado' | 'promocional' | 'transparente'} nomeMaterial 
  * @returns {{ valorMaterialAmador: number, valorMaterialProfissional: number, larguraMaterial: number }}
  */
