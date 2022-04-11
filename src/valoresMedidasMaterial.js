@@ -5,24 +5,24 @@
 function valoresMedidasMaterial (nomeMaterial){
     const VALORES = {
         fosco: {
-            valorMaterialAmador: 120,
+            valorMaterialAmador: 132,
             valorMaterialProfissional: 66,
             larguraMaterial: 120,    
         },
         blocado: {
-            valorMaterialAmador: 120,
-            valorMaterialProfissional: 66,
-            larguraMaterial: 130,
+            valorMaterialAmador: 138,
+            valorMaterialProfissional: 77,
+            larguraMaterial: 126,
         },
         promocional: {
-            valorMaterialAmador: 120,
+            valorMaterialAmador: 132,
             valorMaterialProfissional: 66,
-            larguraMaterial: 130,
+            larguraMaterial: 127,
         },
         transparente: {
-            valorMaterialAmador: 120,
+            valorMaterialAmador: 132,
             valorMaterialProfissional: 66,
-            larguraMaterial: 130,
+            larguraMaterial: 127,
         }
     }
 
