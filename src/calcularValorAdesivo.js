@@ -27,18 +27,18 @@ function calcularValorAdesivo(alturaString, larguraString, quantidadeString, adi
 
     const quantidadeDeAdesivos = Number(quantidadeString);
 
-   const AVANCO_IMPRESSORA = 4.1;
+   const AVANCO_IMPRESSORA = 4;
    const VALOR_ARTE_ADICIONAL = 5;
     
-    const quantidadeDeAdesivosPorLinha = Math.floor((larguraMaterial)/ largura);
-
+    const quantidadeDeAdesivosPorLinha = Math.floor(larguraMaterial/ largura);
+    console.log(quantidadeDeAdesivosPorLinha);
     const quantidadeDeLinhas = Math.ceil(quantidadeDeAdesivos / quantidadeDeAdesivosPorLinha);
     const avancoImpressao = ((quantidadeDeLinhas * (altura+0.09)) + AVANCO_IMPRESSORA);
     console.log(avancoImpressao);
     const avancoTotalImpressao = Math.round(avancoImpressao);
     console.log(avancoTotalImpressao);
 
-    const areaTotalAdesivos = (larguraMaterial / 100)* Math.round((avancoTotalImpressao / 100));
+    const areaTotalAdesivos = (larguraMaterial / 100)* (avancoTotalImpressao / 100);
     const totalValorProfissional = areaTotalAdesivos * valorMaterialProfissional + (adicionalDeArte ? 5 : 0);
     const totalValorAmador = (areaTotalAdesivos * valorMaterialAmador) + (adicionalDeArte ? VALOR_ARTE_ADICIONAL : 0);
 
