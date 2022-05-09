@@ -138,6 +138,7 @@ function App() {
           <p>Valor amador: {rsFormat.format(resultado.totalValorAmador)}</p>
         </div>
       )}
+
     </Container>
   )
 }
